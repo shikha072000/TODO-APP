@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/css/home.css">
+
+
+<body>
+
+
+    <form action="/todo/create" method="post" id="newpostform">
+
+        <div id="maincontainer">
+            <h1>TODO App</h1>
+            <section id="discription" class="allsection">
+                <h4>DESCRIPTION</h4>
+                <input type="text" id="des" name="info" placeholder="write here what you want to do?">
+            </section>
+            
+            <section id="catAndDate" class="allsection">
+                <div id="catergory">
+                    <span id="spantags">CATEGORY</span>
+                    <select id="selectcat" name="category" required>
+                        <option value="0">Select category:</option>
+                        <option value="WORK">WORK</option>
+                        <option value="OFFICE">OFFICE</option>
+                        <option value="PERSONAL">PERSONAL</option>
+                        <option value="SCHOOL">SCHOOL</option>
+                        <option value="OTHER">OTHER</option>
+                  </select>
+        
+                </div>
+        
+        
+                <div id="date">
+                    <span>due DATE</span>
+                    <input class="datecat" id="dateinput" type="date" name="date" required>
+                </div>
+        
+            </section>
+         <section id="butcontrol" class="allsection">
+            <button class="btn addtask" type="submit" id="addTast" >ADD TASK</button>
+            <button class="btn deletetask" onclick="" id="deleteTast">DELETE TASK</button>
+            </section>
+        </form>
+        
+            <div class="main" id="taskContainer">
+    <form action="/todo/delete" method="post" id="deleteform">
+    <%for(work of works){%>
+        
+        <div class="eachwork" id="<%=work._id%>">
+          <small class="delete"><input type="checkbox" name="check" value="<%=work._id%>"></small><small class='category <%=work.category%>' ><%=work.category%></small><small class="info"><%=work.info%></small><small class="date"><%=work.date%></small>
+        </div>
+    
+        <%}%>
+      
+    </form>
+      
+    
+            </div>
+        
+        
+        
+        </div>
+    <script src="/js/home.js"></script>
+    
+</body>
+
+

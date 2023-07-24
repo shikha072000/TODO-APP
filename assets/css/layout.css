@@ -1,0 +1,12 @@
+body{
+    color:white;
+    background-color: rgb(179, 227, 227);
+}
+@media screen and (min-width: 480px) {
+    body {
+      background-color: orange;
+      display: flex;
+    }
+
+
+  }
